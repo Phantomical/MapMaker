@@ -42,12 +42,12 @@
   <ItemGroup>
     <Compile Include="BasicHeightMap.cs" />
     <Compile Include="HeightMapBuilder.cs" />
-    <Compile Include="IHeightMapSource.cs" />
+    <Compile Include="Sources\IHeightMapSource.cs" />
     <Compile Include="IImageSource.cs" />
     <Compile Include="Vectors.cs" />
-    <Compile Include="IColourMap.cs" />
-    <Compile Include="IHeightMap.cs" />
-    <Compile Include="IMapDataSource.cs" />
+    <Compile Include="MapInterfaces\IColourMap.cs" />
+    <Compile Include="MapInterfaces\IHeightMap.cs" />
+    <Compile Include="Sources\IMapDataSource.cs" />
     <Compile Include="IMapData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
