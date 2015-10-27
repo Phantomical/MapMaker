@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BasicHeightMap.cs" />
     <Compile Include="Vectors.cs" />
     <Compile Include="IColourMap.cs" />
     <Compile Include="IHeightMap.cs" />

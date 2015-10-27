@@ -8,15 +8,15 @@ namespace MapMaker
 {
 	public class BasicHeightMap : IHeightMap
 	{
-		public float[,] HeightArray;
+		public readonly float[,] HeightArray;
 
 		public void SetPixel(int xpos, int ypos, float heightValue)
 		{
-			HeightArray[ypos, xpos] = heightValue;
+			HeightArray[xpos, ypos] = heightValue;
 		}
 		public float GetPixel(int xpos, int ypos)
 		{
-			return HeightArray[ypos, xpos];
+			return HeightArray[xpos, ypos];
 		}
 
 		public int Width
@@ -32,6 +32,11 @@ namespace MapMaker
 			{
 				return HeightArray.GetLength(0);
 			}
+		}
+
+		public BasicHeightMap(int xsize, int ysize)
+		{
+			HeightArray = new float[xsize, ysize];
 		}
 	}
 }

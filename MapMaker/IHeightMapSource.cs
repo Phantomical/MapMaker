@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace MapMaker
 {
-    public interface IMapDataSource
+	public interface IHeightMapSource
 	{
-		Vec4 GetValue(int x, int y);
+		float GetValue(int x, int y);
 	}
 }
