@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace MapMaker
 {
-	public interface IColourMap : IMapData, IImageSource
+	public interface IImageSource
 	{
-		Vec4 GetPixel(int xpos, int ypos);
-		void SetPixel(int xpos, int ypos, Vec4 value);
+		Bitmap GetImageData();
 	}
 }

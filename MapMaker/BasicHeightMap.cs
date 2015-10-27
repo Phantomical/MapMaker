@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.Runtime.InteropServices;
 
 namespace MapMaker
 {
@@ -37,6 +40,36 @@ namespace MapMaker
 		public BasicHeightMap(int xsize, int ysize)
 		{
 			HeightArray = new float[xsize, ysize];
+		}
+
+		public Bitmap GetImageData()
+		{
+			Bitmap bmp = new Bitmap(Width, Height, PixelFormat.Format16bppGrayScale);
+			BitmapData data = bmp.LockBits(new Rectangle(0, 0, Width, Height), ImageLockMode.WriteOnly, PixelFormat.Format16bppGrayScale);
+
+			int width = Width;
+			int height = Height;
+
+			ushort[] bdata = new ushort[Width * Height];
+
+			float max = (float)ushort.MaxValue;
+
+			for(int y = 0; y < height; y++)
+			{
+				for(int x = 0; x < height; x++)
+				{
+					bdata[y * Width + x] = (ushort)(Math.Max(GetPixel(x, y) * max, 0f));
+				}
+			}
+
+			byte[] array = new byte[sizeof(ushort) * bdata.Length];
+			Buffer.BlockCopy(bdata, 0, array, 0, array.Length);
+
+			Marshal.Copy(array, 0, data.Scan0, array.Length);
+
+			bmp.UnlockBits(data);
+
+			return bmp;
 		}
 	}
 }
