@@ -243,9 +243,9 @@ namespace MapMaker
 
 	public struct Vec4
 	{
-		float X, Y, Z, W;
+		public float X, Y, Z, W;
 
-		float R
+		public float R
 		{
 			get
 			{
@@ -256,7 +256,7 @@ namespace MapMaker
 				X = value;
 			}
 		}
-		float G
+		public float G
 		{
 			get
 			{
@@ -267,7 +267,7 @@ namespace MapMaker
 				Y = value;
 			}
 		}
-		float B
+		public float B
 		{
 			get
 			{
@@ -278,7 +278,7 @@ namespace MapMaker
 				Z = value;
 			}
 		}
-		float A
+		public float A
 		{
 			get
 			{

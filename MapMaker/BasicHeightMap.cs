@@ -46,7 +46,7 @@ namespace MapMaker
 		{
 			Bitmap bmp = new Bitmap(Width, Height, PixelFormat.Format16bppGrayScale);
 			BitmapData data = bmp.LockBits(new Rectangle(0, 0, Width, Height), ImageLockMode.WriteOnly, PixelFormat.Format16bppGrayScale);
-
+			
 			int width = Width;
 			int height = Height;
 
