@@ -35,20 +35,20 @@ namespace MapMaker
 		{
 			get
 			{
-				return ColourArray.GetLength(1);
+				return ColourArray.GetLength(0);
 			}
 		}
 		public int Height
 		{
 			get
 			{
-				return ColourArray.GetLength(0);
+				return ColourArray.GetLength(1);
 			}
 		}
 
-		public BasicColourMap(int xsize, int ysize)
+		public BasicColourMap(int width, int height)
 		{
-			ColourArray = new Vec4[xsize, ysize];
+			ColourArray = new Vec4[width, height];
 		}
 
 		public Bitmap GetImageData()

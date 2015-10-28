@@ -34,20 +34,20 @@ namespace MapMaker
 		{
 			get
 			{
-				return HeightArray.GetLength(1);
+				return HeightArray.GetLength(0);
 			}
 		}
 		public int Height
 		{
 			get 
 			{
-				return HeightArray.GetLength(0);
+				return HeightArray.GetLength(1);
 			}
 		}
 
-		public BasicHeightMap(int xsize, int ysize)
+		public BasicHeightMap(int width, int height)
 		{
-			HeightArray = new float[xsize, ysize];
+			HeightArray = new float[width, height];
 		}
 
 		public Bitmap GetImageData()
