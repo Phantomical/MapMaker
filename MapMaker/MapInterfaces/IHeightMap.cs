@@ -10,5 +10,10 @@ namespace MapMaker
 	{
 		void SetPixel(int xpos, int ypos, float heightValue);
 		float GetPixel(int xpos, int ypos);
+
+		float[,] MapData
+		{
+			get;
+		}
 	}
 }

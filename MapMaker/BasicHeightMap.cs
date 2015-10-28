@@ -13,6 +13,14 @@ namespace MapMaker
 	{
 		public readonly float[,] HeightArray;
 
+		public float[,] MapData
+		{
+			get
+			{
+				return HeightArray;
+			}
+		}
+
 		public void SetPixel(int xpos, int ypos, float heightValue)
 		{
 			HeightArray[xpos, ypos] = heightValue;

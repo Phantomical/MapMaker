@@ -10,5 +10,10 @@ namespace MapMaker
 	{
 		Vec4 GetPixel(int xpos, int ypos);
 		void SetPixel(int xpos, int ypos, Vec4 value);
+
+		Vec4[,] MapData
+		{
+			get;
+		}
 	}
 }

@@ -14,6 +14,14 @@ namespace MapMaker
 		//2D array of pixels
 		public readonly Vec4[,] ColourArray;
 
+		public Vec4[,] MapData
+		{
+			get
+			{
+				return ColourArray;
+			}
+		}
+
 		public void SetPixel(int xpos, int ypos, Vec4 heightValue)
 		{
 			ColourArray[xpos, ypos] = heightValue;
