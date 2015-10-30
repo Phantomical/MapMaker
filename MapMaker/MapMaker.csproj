@@ -32,6 +32,9 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LibNoise">
+      <HintPath>..\dependencies\LibNoise.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -44,7 +47,9 @@
   <ItemGroup>
     <Compile Include="BasicColourMap.cs" />
     <Compile Include="BasicHeightMap.cs" />
+    <Compile Include="HeightGenerators\NoiseGenerators.cs" />
     <Compile Include="HeightMapBuilder.cs" />
+    <Compile Include="LibNoiseExt.cs" />
     <Compile Include="Sources\IHeightMapSource.cs" />
     <Compile Include="IImageSource.cs" />
     <Compile Include="Vectors.cs" />
@@ -56,7 +61,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ColourGenerators\" />
-    <Folder Include="HeightGenerators\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
