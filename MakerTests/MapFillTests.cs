@@ -26,7 +26,7 @@ namespace MakerTests
 			{
 				for (int x = 0; x < Map.Width; x++)
 				{
-					Assert.AreSame(ExpectedValue, Map.GetPixel(x, y));
+					Assert.AreEqual(ExpectedValue, Map.GetPixel(x, y));
 				}
 			}
 		}
