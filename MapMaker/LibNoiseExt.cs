@@ -77,6 +77,48 @@ namespace MapMaker.LibNoiseExt
 			return Func(x, y, z);
 		}
 	}
+	public class Fractal : IModule
+	{
+		public IModule Source;
+
+		public int Octaves = 1;
+		public float Persistence = 0.75f;
+		public float Frequency = 2.0f;
+		public float Lacunarity = 2;
+
+		public Fractal(IModule SourceModule)
+		{
+			Source = SourceModule;
+		}
+		public Fractal(IModule Src, int octaves, float persistence, float frequency, float lacunarity) :
+			this(Src)
+		{
+			Octaves = octaves;
+			Persistence = persistence;
+			Frequency = frequency;
+			Lacunarity = lacunarity;
+		}
+
+		public double GetValue(double x, double y, double z)
+		{
+			double total = 0;
+			double maxAmplitude = 0;
+			double amplitude = 1;
+			double frequency = Frequency;
+
+			for (int i = 0; i < Octaves; i++)
+			{
+				//Get the noise sample
+				total += Source.GetValue(x * frequency, y * frequency, z * frequency) * amplitude;
+
+				frequency *= Lacunarity;
+				maxAmplitude += amplitude;
+				amplitude *= Persistence;
+			}
+
+			return total / maxAmplitude;
+		}
+	}
 
 	public class Sin : IModule
 	{
