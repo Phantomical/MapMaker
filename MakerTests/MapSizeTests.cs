@@ -5,7 +5,7 @@ using MapMaker;
 namespace MakerTests
 {
 	[TestClass]
-	public class BasicHeightMapTest
+	public class MapSizeTests
 	{
 		[TestMethod]
 		public void HeightMapSizeTest()

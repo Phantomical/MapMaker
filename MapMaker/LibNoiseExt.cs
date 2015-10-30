@@ -43,6 +43,24 @@ namespace MapMaker.LibNoiseExt
 	}
 
 	/// <summary>
+	/// Evaluates to a constant value
+	/// </summary>
+	public class Constant : IModule
+	{
+		public double Value;
+
+		public Constant(double val)
+		{
+			Value = val;
+		}
+
+		public double GetValue(double x, double y, double z)
+		{
+			return Value;
+		}
+	}
+
+	/// <summary>
 	/// Equivalent to <code>1/Source</code>
 	/// </summary>
 	public class Inverse : IModule
