@@ -18,7 +18,7 @@ namespace MapMaker.LibNoiseExt
 			InputModule = input;
 		}
 
-		double GetValue(double x, double y, double z)
+		public double GetValue(double x, double y, double z)
 		{
 			double addand = AddSource.GetValue(x, y, z);
 			return InputModule.GetValue(x + addand, y + addand, z + addand);
